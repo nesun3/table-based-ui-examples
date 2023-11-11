@@ -1,0 +1,3724 @@
+<!DOCTYPE html><html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <title>Table-Based UI for SAP Cloud Integration</title>
+    <link rel='stylesheet' type='text/css' href='https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap.min.css' />
+    <link rel='stylesheet' type='text/css' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' />
+    <link rel='stylesheet' type='text/css' href='https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css' />
+    <link rel='stylesheet' type='text/css' href='https://cdn.datatables.net/fixedheader/3.4.0/css/fixedHeader.dataTables.min.css' />
+    <link rel='stylesheet' type='text/css' href='https://cdn.datatables.net/fixedcolumns/4.3.0/css/fixedColumns.dataTables.min.css' />
+    <link rel='stylesheet' type='text/css' href='https://cdn.datatables.net/select/1.7.0/css/select.dataTables.min.css' />
+    <style>
+                    body {background-color: #fafafa;}
+                    h2 {text-align: center;padding: 20px 0;}
+                    thead {background-color: #72b5f8;}
+                    caption {text-align: left;padding: 1rem;}
+                    @keyframes colorChange {
+                    0% {color: #DF8453;}
+                    25% {color: #3d8dae;}
+                    50% {color: #e4a9a8;}
+                    75% {color: #dbad4a;}
+                    100% {color: #17494d;}
+                    }
+                    p {text-align: center;animation: colorChange 10s linear infinite;}
+                    </style>
+    <script src='https://code.jquery.com/jquery-3.7.0.js'></script>
+    <script src='https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js'></script>
+    <script src='https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap.min.js'></script>
+    <script src='https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js'></script>
+    <script src='https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js'></script>
+    <script src='https://cdn.datatables.net/buttons/2.4.2/js/buttons.colVis.min.js'></script>
+    <script src='https://cdn.datatables.net/fixedheader/3.4.0/js/dataTables.fixedHeader.min.js'></script>
+    <script src='https://cdn.datatables.net/fixedcolumns/4.3.0/js/dataTables.fixedColumns.min.js'></script>
+    <script src='https://cdn.datatables.net/select/1.7.0/js/dataTables.select.min.js'></script>
+    <script src='https://kit.fontawesome.com/04cf6b748f.js' crossorigin='anonymous'></script>
+  </head>
+  <body>
+    <div class='table-container'>
+      <div class='table-info'>
+        <h2>All Integration Configurations</h2>
+      </div>
+      <div class='blank-row'></div>
+      <table id='example' class='table table-striped table-bordered' style='width:100%'>
+        <caption>As of date: Nov 11, 2023, 13:02:24 UTC</caption>
+        <thead class='table-header-row'>
+          <tr>
+            <th>PackageName</th>
+            <th>Name</th>
+            <th>Id</th>
+            <th>Version</th>
+            <th>ParameterKey</th>
+            <th>ParameterValue</th>
+            <th>DataType</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Continuous Integration and Delivery for SAP Cloud Integration</td>
+            <td>Transport Integration Contents</td>
+            <td>Transport_Integration_Contents</td>
+            <td>2.0.0</td>
+            <td>IntegrationFlowId’s</td>
+            <td>Integration flow IDs to be included in the extract (comma-separated values)</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Continuous Integration and Delivery for SAP Cloud Integration</td>
+            <td>Transport Integration Contents</td>
+            <td>Transport_Integration_Contents</td>
+            <td>2.0.0</td>
+            <td>SelectArtifactType</td>
+            <td>Select Integration Content Type to be transported. Allowed values: pkg or ifl or vmp.</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Continuous Integration and Delivery for SAP Cloud Integration</td>
+            <td>Transport Integration Contents</td>
+            <td>Transport_Integration_Contents</td>
+            <td>2.0.0</td>
+            <td>IntegrationPackageId’s</td>
+            <td>Integration Package IDs to be included in the extract (comma-separated values)</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Continuous Integration and Delivery for SAP Cloud Integration</td>
+            <td>Transport Integration Contents</td>
+            <td>Transport_Integration_Contents</td>
+            <td>2.0.0</td>
+            <td>DeployAfterImport</td>
+            <td>Do you want to deploy after importing to the Target Subaccount? Allowed values: yes or no</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Continuous Integration and Delivery for SAP Cloud Integration</td>
+            <td>Transport Integration Contents</td>
+            <td>Transport_Integration_Contents</td>
+            <td>2.0.0</td>
+            <td>Scheduler</td>
+            <td>fireNow=true</td>
+            <td>custom:schedule</td>
+          </tr>
+          <tr>
+            <td>Continuous Integration and Delivery for SAP Cloud Integration</td>
+            <td>Transport Integration Contents</td>
+            <td>Transport_Integration_Contents</td>
+            <td>2.0.0</td>
+            <td>SourceSystemName</td>
+            <td>Name of the Source Subaccount</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Continuous Integration and Delivery for SAP Cloud Integration</td>
+            <td>Transport Integration Contents</td>
+            <td>Transport_Integration_Contents</td>
+            <td>2.0.0</td>
+            <td>SourceOAuthCredential</td>
+            <td>Set the name of the Source Credential created in Security Material for SAP CI ODATA V2 API authentication</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Continuous Integration and Delivery for SAP Cloud Integration</td>
+            <td>Transport Integration Contents</td>
+            <td>Transport_Integration_Contents</td>
+            <td>2.0.0</td>
+            <td>TargetOAuthCredential</td>
+            <td>Set the name of the Target Credential created in Security Material for SAP CI ODATA V2 API authentication</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Continuous Integration and Delivery for SAP Cloud Integration</td>
+            <td>Transport Integration Contents</td>
+            <td>Transport_Integration_Contents</td>
+            <td>2.0.0</td>
+            <td>WebhookAddress</td>
+            <td>Incoming Webhook Address of your Microsoft Teams channel</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Continuous Integration and Delivery for SAP Cloud Integration</td>
+            <td>Transport Integration Contents</td>
+            <td>Transport_Integration_Contents</td>
+            <td>2.0.0</td>
+            <td>SourceHostAddress</td>
+            <td>Source Hostname of Process Integration Runtime Service | API Plan – you find this value in BTP Cockpit of your Cloud Integration subscription</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Continuous Integration and Delivery for SAP Cloud Integration</td>
+            <td>Transport Integration Contents</td>
+            <td>Transport_Integration_Contents</td>
+            <td>2.0.0</td>
+            <td>ValueMappingId's</td>
+            <td>Value Mapping IDs to be included in the extract (comma-separated values)</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Continuous Integration and Delivery for SAP Cloud Integration</td>
+            <td>Transport Integration Contents</td>
+            <td>Transport_Integration_Contents</td>
+            <td>2.0.0</td>
+            <td>Top</td>
+            <td>Sync only the first n Packages (Leave Blank or give an Integer Value)</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Continuous Integration and Delivery for SAP Cloud Integration</td>
+            <td>Transport Integration Contents</td>
+            <td>Transport_Integration_Contents</td>
+            <td>2.0.0</td>
+            <td>Skip</td>
+            <td>Skip the first n Packages from Sync (Leave Blank or give an Integer Value)</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Continuous Integration and Delivery for SAP Cloud Integration</td>
+            <td>Transport Integration Contents</td>
+            <td>Transport_Integration_Contents</td>
+            <td>2.0.0</td>
+            <td>TargetSystemName</td>
+            <td>Name of the Target Subaccount</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Continuous Integration and Delivery for SAP Cloud Integration</td>
+            <td>Transport Integration Contents</td>
+            <td>Transport_Integration_Contents</td>
+            <td>2.0.0</td>
+            <td>SendTeamsNotification</td>
+            <td>Do you want to send Notification to your Microsoft Teams channel? Allowed Value: yes or no</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Continuous Integration and Delivery for SAP Cloud Integration</td>
+            <td>Transport Integration Contents</td>
+            <td>Transport_Integration_Contents</td>
+            <td>2.0.0</td>
+            <td>TargetHostAddress</td>
+            <td>Target Hostname of Process Integration Runtime Service | API Plan – you find this value in BTP Cockpit of your Cloud Integration subscription</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Continuous Integration and Delivery for SAP Cloud Integration</td>
+            <td>Sync Integration Contents to GitHub</td>
+            <td>Sync_Integration_Contents_to_GitHub</td>
+            <td>2.0.0</td>
+            <td>SelectArtifactType</td>
+            <td>Select Integration Content Type to Sync to GitHub. Allowed values: all,pkg,ifl,vmp</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Continuous Integration and Delivery for SAP Cloud Integration</td>
+            <td>Sync Integration Contents to GitHub</td>
+            <td>Sync_Integration_Contents_to_GitHub</td>
+            <td>2.0.0</td>
+            <td>Scheduler</td>
+            <td>fireNow=true</td>
+            <td>custom:schedule</td>
+          </tr>
+          <tr>
+            <td>Continuous Integration and Delivery for SAP Cloud Integration</td>
+            <td>Sync Integration Contents to GitHub</td>
+            <td>Sync_Integration_Contents_to_GitHub</td>
+            <td>2.0.0</td>
+            <td>GithubCommitMsg</td>
+            <td>Commit message</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Continuous Integration and Delivery for SAP Cloud Integration</td>
+            <td>Sync Integration Contents to GitHub</td>
+            <td>Sync_Integration_Contents_to_GitHub</td>
+            <td>2.0.0</td>
+            <td>OAuthCredential</td>
+            <td>Set the name of the Credential created in Security Material for SAP CI ODATA V2 API authentication</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Continuous Integration and Delivery for SAP Cloud Integration</td>
+            <td>Sync Integration Contents to GitHub</td>
+            <td>Sync_Integration_Contents_to_GitHub</td>
+            <td>2.0.0</td>
+            <td>HostAddress</td>
+            <td>Hostname of Process Integration Runtime Service | API Plan – you find this value in BTP Cockpit of your Cloud Integration subscription</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Continuous Integration and Delivery for SAP Cloud Integration</td>
+            <td>Sync Integration Contents to GitHub</td>
+            <td>Sync_Integration_Contents_to_GitHub</td>
+            <td>2.0.0</td>
+            <td>WebhookAddress</td>
+            <td>Incoming Webhook Address of your Microsoft Teams channel</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Continuous Integration and Delivery for SAP Cloud Integration</td>
+            <td>Sync Integration Contents to GitHub</td>
+            <td>Sync_Integration_Contents_to_GitHub</td>
+            <td>2.0.0</td>
+            <td>GithHubAccessToken</td>
+            <td>Set the name of the credential created in Security Material to store Github Personal Access Token</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Continuous Integration and Delivery for SAP Cloud Integration</td>
+            <td>Sync Integration Contents to GitHub</td>
+            <td>Sync_Integration_Contents_to_GitHub</td>
+            <td>2.0.0</td>
+            <td>UploadFileType</td>
+            <td>Upload to Github as Zip or Unzip File. Allowed values: zip,unzip</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Continuous Integration and Delivery for SAP Cloud Integration</td>
+            <td>Sync Integration Contents to GitHub</td>
+            <td>Sync_Integration_Contents_to_GitHub</td>
+            <td>2.0.0</td>
+            <td>ValueMappingId's</td>
+            <td>Value Mapping IDs to be included in the extract (comma-separated values)</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Continuous Integration and Delivery for SAP Cloud Integration</td>
+            <td>Sync Integration Contents to GitHub</td>
+            <td>Sync_Integration_Contents_to_GitHub</td>
+            <td>2.0.0</td>
+            <td>IntegrationPackageId</td>
+            <td>Integration Package IDs to be included in the extract (comma-separated values)</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Continuous Integration and Delivery for SAP Cloud Integration</td>
+            <td>Sync Integration Contents to GitHub</td>
+            <td>Sync_Integration_Contents_to_GitHub</td>
+            <td>2.0.0</td>
+            <td>Top</td>
+            <td>Sync only the first n Packages (Leave Blank or give an Integer Value)</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Continuous Integration and Delivery for SAP Cloud Integration</td>
+            <td>Sync Integration Contents to GitHub</td>
+            <td>Sync_Integration_Contents_to_GitHub</td>
+            <td>2.0.0</td>
+            <td>GitHubRepositoryName</td>
+            <td>The name of the Github Repository without the .git extension</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Continuous Integration and Delivery for SAP Cloud Integration</td>
+            <td>Sync Integration Contents to GitHub</td>
+            <td>Sync_Integration_Contents_to_GitHub</td>
+            <td>2.0.0</td>
+            <td>Skip</td>
+            <td>Skip the first n Packages from Sync (Leave Blank or give an Integer Value)</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Continuous Integration and Delivery for SAP Cloud Integration</td>
+            <td>Sync Integration Contents to GitHub</td>
+            <td>Sync_Integration_Contents_to_GitHub</td>
+            <td>2.0.0</td>
+            <td>SendTeamsNotification</td>
+            <td>Do you want to send Notification to your Microsoft Teams channel? Allowed Value: yes or no</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Continuous Integration and Delivery for SAP Cloud Integration</td>
+            <td>Sync Integration Contents to GitHub</td>
+            <td>Sync_Integration_Contents_to_GitHub</td>
+            <td>2.0.0</td>
+            <td>Event</td>
+            <td>Select either Create or Update file contents in GitHub. Allowed values: create,update</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Continuous Integration and Delivery for SAP Cloud Integration</td>
+            <td>Sync Integration Contents to GitHub</td>
+            <td>Sync_Integration_Contents_to_GitHub</td>
+            <td>2.0.0</td>
+            <td>IntegrationFlowId</td>
+            <td>Integration flow IDs to be included in the extract (comma-separated values)</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Continuous Integration and Delivery for SAP Cloud Integration</td>
+            <td>Sync Integration Contents to GitHub</td>
+            <td>Sync_Integration_Contents_to_GitHub</td>
+            <td>2.0.0</td>
+            <td>GitHubOwnerName</td>
+            <td>The account owner of Github Repository</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Continuous Integration and Delivery for SAP Cloud Integration</td>
+            <td>Sync Integration Contents to GitHub - Delta</td>
+            <td>Sync_Integration_Contents_to_GitHub_-_Delta</td>
+            <td>2.0.0</td>
+            <td>SelectArtifactType</td>
+            <td>Select Integration Content Type to Sync to GitHub. Allowed values: all,pkg,ifl</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Continuous Integration and Delivery for SAP Cloud Integration</td>
+            <td>Sync Integration Contents to GitHub - Delta</td>
+            <td>Sync_Integration_Contents_to_GitHub_-_Delta</td>
+            <td>2.0.0</td>
+            <td>Scheduler</td>
+            <td>fireNow=true</td>
+            <td>custom:schedule</td>
+          </tr>
+          <tr>
+            <td>Continuous Integration and Delivery for SAP Cloud Integration</td>
+            <td>Sync Integration Contents to GitHub - Delta</td>
+            <td>Sync_Integration_Contents_to_GitHub_-_Delta</td>
+            <td>2.0.0</td>
+            <td>UpdateLSRD</td>
+            <td>Update Last Successful Run DateTime in yyyy-MM-ddThh:mm:ssZ format</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Continuous Integration and Delivery for SAP Cloud Integration</td>
+            <td>Sync Integration Contents to GitHub - Delta</td>
+            <td>Sync_Integration_Contents_to_GitHub_-_Delta</td>
+            <td>2.0.0</td>
+            <td>GithubCommitMsg</td>
+            <td>Commit message</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Continuous Integration and Delivery for SAP Cloud Integration</td>
+            <td>Sync Integration Contents to GitHub - Delta</td>
+            <td>Sync_Integration_Contents_to_GitHub_-_Delta</td>
+            <td>2.0.0</td>
+            <td>OAuthCredential</td>
+            <td>Set the name of the Credential created in Security Material for SAP CI ODATA V2 API authentication</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Continuous Integration and Delivery for SAP Cloud Integration</td>
+            <td>Sync Integration Contents to GitHub - Delta</td>
+            <td>Sync_Integration_Contents_to_GitHub_-_Delta</td>
+            <td>2.0.0</td>
+            <td>HostAddress</td>
+            <td>Hostname of Process Integration Runtime Service | API Plan – you find this value in BTP Cockpit of your Cloud Integration subscription</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Continuous Integration and Delivery for SAP Cloud Integration</td>
+            <td>Sync Integration Contents to GitHub - Delta</td>
+            <td>Sync_Integration_Contents_to_GitHub_-_Delta</td>
+            <td>2.0.0</td>
+            <td>WebhookAddress</td>
+            <td>Incoming Webhook Address of your Microsoft Teams channel</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Continuous Integration and Delivery for SAP Cloud Integration</td>
+            <td>Sync Integration Contents to GitHub - Delta</td>
+            <td>Sync_Integration_Contents_to_GitHub_-_Delta</td>
+            <td>2.0.0</td>
+            <td>GithHubAccessToken</td>
+            <td>Set the name of the credential created in Security Material to store Github Personal Access Token</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Continuous Integration and Delivery for SAP Cloud Integration</td>
+            <td>Sync Integration Contents to GitHub - Delta</td>
+            <td>Sync_Integration_Contents_to_GitHub_-_Delta</td>
+            <td>2.0.0</td>
+            <td>UploadFileType</td>
+            <td>Upload to Github as Zip or Unzip File. Allowed values: zip,unzip</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Continuous Integration and Delivery for SAP Cloud Integration</td>
+            <td>Sync Integration Contents to GitHub - Delta</td>
+            <td>Sync_Integration_Contents_to_GitHub_-_Delta</td>
+            <td>2.0.0</td>
+            <td>IntegrationPackageId</td>
+            <td>Integration Package IDs to be included in the extract (comma-separated values)</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Continuous Integration and Delivery for SAP Cloud Integration</td>
+            <td>Sync Integration Contents to GitHub - Delta</td>
+            <td>Sync_Integration_Contents_to_GitHub_-_Delta</td>
+            <td>2.0.0</td>
+            <td>Top</td>
+            <td>Sync only the first n Packages (Leave Blank or give an Integer Value)</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Continuous Integration and Delivery for SAP Cloud Integration</td>
+            <td>Sync Integration Contents to GitHub - Delta</td>
+            <td>Sync_Integration_Contents_to_GitHub_-_Delta</td>
+            <td>2.0.0</td>
+            <td>GitHubRepositoryName</td>
+            <td>The name of the Github Repository without the .git extension</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Continuous Integration and Delivery for SAP Cloud Integration</td>
+            <td>Sync Integration Contents to GitHub - Delta</td>
+            <td>Sync_Integration_Contents_to_GitHub_-_Delta</td>
+            <td>2.0.0</td>
+            <td>Skip</td>
+            <td>Skip the first n Packages from Sync (Leave Blank or give an Integer Value)</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Continuous Integration and Delivery for SAP Cloud Integration</td>
+            <td>Sync Integration Contents to GitHub - Delta</td>
+            <td>Sync_Integration_Contents_to_GitHub_-_Delta</td>
+            <td>2.0.0</td>
+            <td>SendTeamsNotification</td>
+            <td>Do you want to send Notification to your Microsoft Teams channel? Allowed Value: yes or no</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Continuous Integration and Delivery for SAP Cloud Integration</td>
+            <td>Sync Integration Contents to GitHub - Delta</td>
+            <td>Sync_Integration_Contents_to_GitHub_-_Delta</td>
+            <td>2.0.0</td>
+            <td>IntegrationFlowId</td>
+            <td>Integration flow IDs to be included in the extract (comma-separated values)</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Continuous Integration and Delivery for SAP Cloud Integration</td>
+            <td>Sync Integration Contents to GitHub - Delta</td>
+            <td>Sync_Integration_Contents_to_GitHub_-_Delta</td>
+            <td>2.0.0</td>
+            <td>UpdateLSRDFlag</td>
+            <td>Update Last Successful Run DateTime Flag. Allowed values: yes,no</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Continuous Integration and Delivery for SAP Cloud Integration</td>
+            <td>Sync Integration Contents to GitHub - Delta</td>
+            <td>Sync_Integration_Contents_to_GitHub_-_Delta</td>
+            <td>2.0.0</td>
+            <td>GitHubOwnerName</td>
+            <td>The account owner of Github Repository</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Continuous Integration and Delivery for SAP Cloud Integration</td>
+            <td>Upload Integration Contents from GitHub</td>
+            <td>Upload_Integration_Contents_from_GitHub</td>
+            <td>2.0.0</td>
+            <td>SelectArtifactType</td>
+            <td>Select Integration Content Type from GitHub Repo to be uploaded to the tenant. Allowed values: iflow or resources</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Continuous Integration and Delivery for SAP Cloud Integration</td>
+            <td>Upload Integration Contents from GitHub</td>
+            <td>Upload_Integration_Contents_from_GitHub</td>
+            <td>2.0.0</td>
+            <td>GithHubAccessToken</td>
+            <td>Set the name of the credential created in Security Material to store Github Personal Access Token</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Continuous Integration and Delivery for SAP Cloud Integration</td>
+            <td>Upload Integration Contents from GitHub</td>
+            <td>Upload_Integration_Contents_from_GitHub</td>
+            <td>2.0.0</td>
+            <td>GitHubPath</td>
+            <td>GitHub Path to the location of the file - relative to root of the repository. Note: If SelectArtifactType = &amp;apos;resources&amp;apos; only, then you can add multiple paths (comma-separated values)</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Continuous Integration and Delivery for SAP Cloud Integration</td>
+            <td>Upload Integration Contents from GitHub</td>
+            <td>Upload_Integration_Contents_from_GitHub</td>
+            <td>2.0.0</td>
+            <td>IntegrationPackageId</td>
+            <td>Integration Package Id of the Integration flow to be uploaded from GitHub Repo to the SAP Cloud Integration tenant</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Continuous Integration and Delivery for SAP Cloud Integration</td>
+            <td>Upload Integration Contents from GitHub</td>
+            <td>Upload_Integration_Contents_from_GitHub</td>
+            <td>2.0.0</td>
+            <td>GitHubRepositoryName</td>
+            <td>The name of the Github Repository without the .git extension</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Continuous Integration and Delivery for SAP Cloud Integration</td>
+            <td>Upload Integration Contents from GitHub</td>
+            <td>Upload_Integration_Contents_from_GitHub</td>
+            <td>2.0.0</td>
+            <td>IntegrationFlowId</td>
+            <td>Integration flow Id to be uploaded from GitHub Repo to the SAP Cloud Integration tenant</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Continuous Integration and Delivery for SAP Cloud Integration</td>
+            <td>Upload Integration Contents from GitHub</td>
+            <td>Upload_Integration_Contents_from_GitHub</td>
+            <td>2.0.0</td>
+            <td>IntegrationFlowName</td>
+            <td>Integration flow Name to be uploaded from GitHub Repo to the SAP Cloud Integration tenant</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Continuous Integration and Delivery for SAP Cloud Integration</td>
+            <td>Upload Integration Contents from GitHub</td>
+            <td>Upload_Integration_Contents_from_GitHub</td>
+            <td>2.0.0</td>
+            <td>OAuthCredential</td>
+            <td>Set the name of the Credential created in Security Material for SAP CI ODATA V2 API authentication</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Continuous Integration and Delivery for SAP Cloud Integration</td>
+            <td>Upload Integration Contents from GitHub</td>
+            <td>Upload_Integration_Contents_from_GitHub</td>
+            <td>2.0.0</td>
+            <td>HostAddress</td>
+            <td>Hostname of Process Integration Runtime Service | API Plan – you find this value in BTP Cockpit of your Cloud Integration subscription</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Continuous Integration and Delivery for SAP Cloud Integration</td>
+            <td>Upload Integration Contents from GitHub</td>
+            <td>Upload_Integration_Contents_from_GitHub</td>
+            <td>2.0.0</td>
+            <td>GitHubOwnerName</td>
+            <td>The account owner of Github Repository</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>Material MATMAS03 split batch materials</td>
+            <td>MATMAS03_Splitter</td>
+            <td>1.18.0</td>
+            <td>HTTP_TIMEOUT</td>
+            <td>600000</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>API_MATERIAL_DOCUMENT_SRV_EWM</td>
+            <td>API_MATERIAL_DOCUMENT_SRV_EWM</td>
+            <td>1.20.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>API_MATERIAL_DOCUMENT_SRV_EWM</td>
+            <td>API_MATERIAL_DOCUMENT_SRV_EWM</td>
+            <td>1.20.0</td>
+            <td>USER_ROLE</td>
+            <td>ESBMessaging.send</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>ShopOrder LOIPRO04 handle exception</td>
+            <td>LOIPRO04_STD_ERRORHANDLER</td>
+            <td>1.16.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>PlannedOrder LOIPLO02 process request</td>
+            <td>PlannedOrder_LOIPLO02_process_request</td>
+            <td>1.16.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>PlannedOrder LOIPLO02 process request</td>
+            <td>PlannedOrder_LOIPLO02_process_request</td>
+            <td>1.16.0</td>
+            <td>HTTP_TIMEOUT</td>
+            <td>600000</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>Initial Parameters</td>
+            <td>InitParameters</td>
+            <td>1.20.0</td>
+            <td>COMMON_DME_SB_URL</td>
+            <td></td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>Initial Parameters</td>
+            <td>InitParameters</td>
+            <td>1.20.0</td>
+            <td>COMMON_DMC_REO_ME_OP_URL_LIST</td>
+            <td></td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>Initial Parameters</td>
+            <td>InitParameters</td>
+            <td>1.20.0</td>
+            <td>PID</td>
+            <td>DME_Generic_Processing_00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>Initial Parameters</td>
+            <td>InitParameters</td>
+            <td>1.20.0</td>
+            <td>COMMON_DMC_REO_ME_OP_SECURITY_MATERIAL_LIST</td>
+            <td></td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>Initial Parameters</td>
+            <td>InitParameters</td>
+            <td>1.20.0</td>
+            <td>TENANT_URL</td>
+            <td></td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>Initial Parameters</td>
+            <td>InitParameters</td>
+            <td>1.20.0</td>
+            <td>ENABLE_PLANT_CONVERSION</td>
+            <td>FALSE</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>Initial Parameters</td>
+            <td>InitParameters</td>
+            <td>1.20.0</td>
+            <td>ENABLE_INBOUND_OAUTH</td>
+            <td>FALSE</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>Initial Parameters</td>
+            <td>InitParameters</td>
+            <td>1.20.0</td>
+            <td>TENANT_CREDENTIALS</td>
+            <td>PD_DEPLOYER_USER</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>Initial Parameters</td>
+            <td>InitParameters</td>
+            <td>1.20.0</td>
+            <td>COMMON_DME_IDENTITY_ZONE_SUBDOMAIN</td>
+            <td></td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>Initial Parameters</td>
+            <td>InitParameters</td>
+            <td>1.20.0</td>
+            <td>COMMON_DME_INT_URL</td>
+            <td></td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>ComponentAdd post process request</td>
+            <td>componentAdd_STD_POSTSERVICE</td>
+            <td>1.16.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>EWM ReadStock process request</td>
+            <td>ewmReadStock_STD_SERVICE</td>
+            <td>1.16.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>EWM ReadStock process request</td>
+            <td>ewmReadStock_STD_SERVICE</td>
+            <td>1.16.0</td>
+            <td>HTTP_TIMEOUT</td>
+            <td>600000</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>API_CLFN_CHARACTERISTIC_SRV</td>
+            <td>API_CLFN_CHARACTERISTIC_SRV</td>
+            <td>1.20.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>API_CLFN_CHARACTERISTIC_SRV</td>
+            <td>API_CLFN_CHARACTERISTIC_SRV</td>
+            <td>1.20.0</td>
+            <td>USER_ROLE</td>
+            <td>ESBMessaging.send</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>ProductionOrder LOIPRO05 process request V2</td>
+            <td>LOIPRO05_PRODORDER_V2_STD_SERVICE</td>
+            <td>1.17.0</td>
+            <td>DMC_CREDENTIAL</td>
+            <td>CF_AUTH</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>ProductionOrder LOIPRO05 process request V2</td>
+            <td>LOIPRO05_PRODORDER_V2_STD_SERVICE</td>
+            <td>1.17.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>ProductionOrder LOIPRO05 process request V2</td>
+            <td>LOIPRO05_PRODORDER_V2_STD_SERVICE</td>
+            <td>1.17.0</td>
+            <td>HTTP_TIMEOUT</td>
+            <td>6000000</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>Material MATMAS04 process request</td>
+            <td>Z_MATMAS04_STD_SERVICE</td>
+            <td>1.16.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>Material MATMAS04 process request</td>
+            <td>Z_MATMAS04_STD_SERVICE</td>
+            <td>1.16.0</td>
+            <td>HTTP_TIMEOUT</td>
+            <td>600000</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>StdOdataValueMappingProcessor</td>
+            <td>StdOdataValueMappingProcessor</td>
+            <td>1.16.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>EWM WarehouseStockChange  process request</td>
+            <td>EWM_WarehouseStockChange__process_request</td>
+            <td>1.19.0</td>
+            <td>DMC_CREDENTIAL</td>
+            <td>CF_AUTH</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>EWM WarehouseStockChange  process request</td>
+            <td>EWM_WarehouseStockChange__process_request</td>
+            <td>1.19.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>EWM ReadStock post process request</td>
+            <td>ewmReadStock_STD_POSTSERVICE</td>
+            <td>1.16.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>EWM ReadStock post process request</td>
+            <td>ewmReadStock_STD_POSTSERVICE</td>
+            <td>1.16.0</td>
+            <td>HTTP_TIMEOUT</td>
+            <td>600000</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>API_CLFN_PRODUCT_SRV</td>
+            <td>API_CLFN_PRODUCT_SRV</td>
+            <td>1.20.0</td>
+            <td>ENDPONT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>API_CLFN_PRODUCT_SRV</td>
+            <td>API_CLFN_PRODUCT_SRV</td>
+            <td>1.20.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>API_CLFN_PRODUCT_SRV</td>
+            <td>API_CLFN_PRODUCT_SRV</td>
+            <td>1.20.0</td>
+            <td>USER_ROLE</td>
+            <td>ESBMessaging.send</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>ScrapConfirmation post process request</td>
+            <td>scrapConfirmation_STD_POSTSERVICE</td>
+            <td>1.16.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>Material MATMAS05 process request</td>
+            <td>Z_MATMAS05_STD_SERVICE</td>
+            <td>1.16.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>Material MATMAS05 process request</td>
+            <td>Z_MATMAS05_STD_SERVICE</td>
+            <td>1.16.0</td>
+            <td>HTTP_TIMEOUT</td>
+            <td>600000</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>ProductionOrder LOIPRO04 process request V2</td>
+            <td>LOIPRO04_PRODORDER_V2_STD_SERVICE</td>
+            <td>1.17.0</td>
+            <td>DMC_CREDENTIAL</td>
+            <td>CF_AUTH</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>ProductionOrder LOIPRO04 process request V2</td>
+            <td>LOIPRO04_PRODORDER_V2_STD_SERVICE</td>
+            <td>1.17.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>ProductionOrder LOIPRO04 process request V2</td>
+            <td>LOIPRO04_PRODORDER_V2_STD_SERVICE</td>
+            <td>1.17.0</td>
+            <td>HTTP_TIMEOUT</td>
+            <td>6000000</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>StdReqValueMappingProcessor</td>
+            <td>StdReqValueMappingProcessor</td>
+            <td>1.20.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>BapiServiceWrapperForMultiRequests</td>
+            <td>BapiServiceWrapperForMultiRequests</td>
+            <td>1.18.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>ProcessOrder LOIPRO05 process request</td>
+            <td>LOIPRO05_PROCORDER_STD_SERVICE</td>
+            <td>1.17.0</td>
+            <td>DMC_CREDENTIAL</td>
+            <td>CF_AUTH</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>ProcessOrder LOIPRO05 process request</td>
+            <td>LOIPRO05_PROCORDER_STD_SERVICE</td>
+            <td>1.17.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>ProcessOrder LOIPRO05 process request</td>
+            <td>LOIPRO05_PROCORDER_STD_SERVICE</td>
+            <td>1.17.0</td>
+            <td>HTTP_TIMEOUT</td>
+            <td>6000000</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>Connectivity Check</td>
+            <td>connectivity_check</td>
+            <td>1.20.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>Connectivity Check</td>
+            <td>connectivity_check</td>
+            <td>1.20.0</td>
+            <td>USER_ROLE</td>
+            <td>ESBMessaging.send</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>API_PROD_ORDER_CONFIRMATION_2_SRV</td>
+            <td>API_PROD_ORDER_CONFIRMATION_2_SRV</td>
+            <td>1.20.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>API_PROD_ORDER_CONFIRMATION_2_SRV</td>
+            <td>API_PROD_ORDER_CONFIRMATION_2_SRV</td>
+            <td>1.20.0</td>
+            <td>USER_ROLE</td>
+            <td>ESBMessaging.send</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>ScrapConfirmation process request</td>
+            <td>scrapConfirmation_STD_SERVICE</td>
+            <td>1.16.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>Async Response Producer</td>
+            <td>AsyncResponseProducer</td>
+            <td>1.17.0</td>
+            <td>ExpirationPeriod</td>
+            <td>30</td>
+            <td>xsd:integer</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>Async Response Producer</td>
+            <td>AsyncResponseProducer</td>
+            <td>1.17.0</td>
+            <td>RetentionThresholdForAlerting</td>
+            <td>1</td>
+            <td>xsd:integer</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>YieldConfirmation post process request</td>
+            <td>yieldConfirmation_STD_POSTSERVICE</td>
+            <td>1.16.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>Classification CLFMAS02 process request</td>
+            <td>ClassificationAssignment_CLFMAS02_process_request</td>
+            <td>1.19.2</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>Classification CLFMAS02 process request</td>
+            <td>ClassificationAssignment_CLFMAS02_process_request</td>
+            <td>1.19.2</td>
+            <td>HTTP_TIMEOUT</td>
+            <td>600000</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>EWM WarehouseStagingMethod  process request</td>
+            <td>EWM_WarehouseStagingMethod__process_request</td>
+            <td>1.17.0</td>
+            <td>DMC_CREDENTIAL</td>
+            <td>CF_AUTH</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>EWM WarehouseStagingMethod  process request</td>
+            <td>EWM_WarehouseStagingMethod__process_request</td>
+            <td>1.17.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>MaintainInventory process request</td>
+            <td>maintainInventory_STD_SERVICE</td>
+            <td>1.16.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>MaintainInventory process request</td>
+            <td>maintainInventory_STD_SERVICE</td>
+            <td>1.16.0</td>
+            <td>HTTP_TIMEOUT</td>
+            <td>600000</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>Material MATMAS03 process request</td>
+            <td>Z_MATMAS03_STD_SERVICE</td>
+            <td>1.16.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>Material MATMAS03 process request</td>
+            <td>Z_MATMAS03_STD_SERVICE</td>
+            <td>1.16.0</td>
+            <td>HTTP_TIMEOUT</td>
+            <td>600000</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>EWM GoodsIssue process request</td>
+            <td>ewmGoodsIssue_STD_SERVICE</td>
+            <td>1.16.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>EWM GoodsIssue process request</td>
+            <td>ewmGoodsIssue_STD_SERVICE</td>
+            <td>1.16.0</td>
+            <td>HTTP_TIMEOUT</td>
+            <td>600000</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>API_MATERIAL_DOCUMENT_SRV</td>
+            <td>API_MATERIAL_DOCUMENT_SRV</td>
+            <td>1.20.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>API_MATERIAL_DOCUMENT_SRV</td>
+            <td>API_MATERIAL_DOCUMENT_SRV</td>
+            <td>1.20.0</td>
+            <td>USER_ROLE</td>
+            <td>ESBMessaging.send</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>EWM GoodsReceipt process request</td>
+            <td>ewmGoodsReceipt_STD_SERVICE</td>
+            <td>1.16.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>EWM GoodsReceipt process request</td>
+            <td>ewmGoodsReceipt_STD_SERVICE</td>
+            <td>1.16.0</td>
+            <td>HTTP_TIMEOUT</td>
+            <td>600000</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>EWM SingleOrderStaging post process request</td>
+            <td>ewmSingleOrderStaging_STD_POSTSERVICE</td>
+            <td>1.16.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>API_DEFECTCODE_SRV</td>
+            <td>API_DEFECTCODE_SRV</td>
+            <td>1.20.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>API_DEFECTCODE_SRV</td>
+            <td>API_DEFECTCODE_SRV</td>
+            <td>1.20.0</td>
+            <td>USER_ROLE</td>
+            <td>ESBMessaging.send</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>LOIPRO04 conditional routing rev 1</td>
+            <td>LOIPRO04_CONDITIONAL_ROUTING_REV1</td>
+            <td>1.16.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>LOIPRO04 conditional routing rev 1</td>
+            <td>LOIPRO04_CONDITIONAL_ROUTING_REV1</td>
+            <td>1.16.0</td>
+            <td>PROD_ORD_SOAP_V2_ENABLED</td>
+            <td>FALSE</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>Async Request Consumer</td>
+            <td>AsyncRequestConsumer</td>
+            <td>1.17.2</td>
+            <td>NumberOfConcurrentProcesses</td>
+            <td>1</td>
+            <td>xsd:integer</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>Async Request Consumer</td>
+            <td>AsyncRequestConsumer</td>
+            <td>1.17.2</td>
+            <td>RetryCount</td>
+            <td>5</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>Async Request Consumer</td>
+            <td>AsyncRequestConsumer</td>
+            <td>1.17.2</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>Async Request Consumer</td>
+            <td>AsyncRequestConsumer</td>
+            <td>1.17.2</td>
+            <td>MaxRetryInterval</td>
+            <td>16</td>
+            <td>xsd:integer</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>Async Request Consumer</td>
+            <td>AsyncRequestConsumer</td>
+            <td>1.17.2</td>
+            <td>RetryInterval</td>
+            <td>1</td>
+            <td>xsd:integer</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>API_CLFN_CLASS_SRV</td>
+            <td>API_CLFN_CLASS_SRV</td>
+            <td>1.20.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>API_CLFN_CLASS_SRV</td>
+            <td>API_CLFN_CLASS_SRV</td>
+            <td>1.20.0</td>
+            <td>USER_ROLE</td>
+            <td>ESBMessaging.send</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>REO Update ShopOrder Schedule split batch ShopOrder schedules</td>
+            <td>shopOrderSchedules_Spliter</td>
+            <td>1.17.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>API_RPTVMFGCONFIRMATION_SRV</td>
+            <td>API_RPTVMFGCONFIRMATION_SRV</td>
+            <td>1.20.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>API_RPTVMFGCONFIRMATION_SRV</td>
+            <td>API_RPTVMFGCONFIRMATION_SRV</td>
+            <td>1.20.0</td>
+            <td>USER_ROLE</td>
+            <td>ESBMessaging.send</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>ComponentAdd process request</td>
+            <td>componentAdd_STD_SERVICE</td>
+            <td>1.16.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>ComponentAdd process request</td>
+            <td>componentAdd_STD_SERVICE</td>
+            <td>1.16.0</td>
+            <td>HTTP_TIMEOUT</td>
+            <td>600000</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>EWM GoodsIssue post process request</td>
+            <td>ewmGoodsIssue_STD_POSTSERVICE</td>
+            <td>1.16.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>EWM GoodsReceipt post process request</td>
+            <td>ewmGoodsReceipt_STD_POSTSERVICE</td>
+            <td>1.16.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>ProductionOrder LOIPRO05 process request</td>
+            <td>LOIPRO05_PRODORDER_STD_SERVICE</td>
+            <td>1.16.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>ProductionOrder LOIPRO05 process request</td>
+            <td>LOIPRO05_PRODORDER_STD_SERVICE</td>
+            <td>1.16.0</td>
+            <td>HTTP_TIMEOUT</td>
+            <td>6000000</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>API_CHARCATTRIBUTECATALOG_SRV</td>
+            <td>API_CHARCATTRIBUTECATALOG_SRV</td>
+            <td>1.20.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>API_CHARCATTRIBUTECATALOG_SRV</td>
+            <td>API_CHARCATTRIBUTECATALOG_SRV</td>
+            <td>1.20.0</td>
+            <td>USER_ROLE</td>
+            <td>ESBMessaging.send</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>BOM BOMMAT05 process request</td>
+            <td>BOMMAT05_STD_SERVICE</td>
+            <td>1.16.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>BOM BOMMAT05 process request</td>
+            <td>BOMMAT05_STD_SERVICE</td>
+            <td>1.16.0</td>
+            <td>HTTP_TIMEOUT</td>
+            <td>600000</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>ShopOrder LOIPRO04 process request</td>
+            <td>LOIPRO04_STD_SERVICE</td>
+            <td>1.16.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>ShopOrder LOIPRO04 process request</td>
+            <td>LOIPRO04_STD_SERVICE</td>
+            <td>1.16.0</td>
+            <td>HTTP_TIMEOUT</td>
+            <td>600000</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>Async Request Producer</td>
+            <td>AsyncRequestProducer</td>
+            <td>1.17.0</td>
+            <td>ExpirationPeriod</td>
+            <td>30</td>
+            <td>xsd:integer</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>Async Request Producer</td>
+            <td>AsyncRequestProducer</td>
+            <td>1.17.0</td>
+            <td>RetentionThresholdForAlerting</td>
+            <td>1</td>
+            <td>xsd:integer</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>Async Request Producer</td>
+            <td>AsyncRequestProducer</td>
+            <td>1.17.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>EWM WarehouseRequestStatus  process request</td>
+            <td>WarehouseRequestStatus_STD_SERVICE</td>
+            <td>1.17.0</td>
+            <td>DMC_CREDENTIAL</td>
+            <td>CF_AUTH</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>EWM WarehouseRequestStatus  process request</td>
+            <td>WarehouseRequestStatus_STD_SERVICE</td>
+            <td>1.17.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>Material ZMNMAT03 split batch materials</td>
+            <td>ZMNMAT03_Splitter</td>
+            <td>1.16.0</td>
+            <td>HTTP_TIMEOUT</td>
+            <td>600000</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>EWM GoodsReceipt Cancellation Post Process Request</td>
+            <td>ewmGoodsReceiptCancellation_STD_POSTSERVICE</td>
+            <td>1.16.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>Async Response Consumer</td>
+            <td>AsyncResponseConsumer</td>
+            <td>1.17.2</td>
+            <td>NumberOfConcurrentProcesses</td>
+            <td>2</td>
+            <td>xsd:integer</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>Async Response Consumer</td>
+            <td>AsyncResponseConsumer</td>
+            <td>1.17.2</td>
+            <td>RetryCount</td>
+            <td>10</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>Async Response Consumer</td>
+            <td>AsyncResponseConsumer</td>
+            <td>1.17.2</td>
+            <td>RetryInterval</td>
+            <td>1</td>
+            <td>xsd:integer</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>ShopOrderComplete process request</td>
+            <td>productionOrderComplete_STD_SERVICE</td>
+            <td>1.16.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>Inventory INVCON02 process request</td>
+            <td>INVCON02_STD_SERVICE</td>
+            <td>1.16.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>Inventory INVCON02 process request</td>
+            <td>INVCON02_STD_SERVICE</td>
+            <td>1.16.0</td>
+            <td>HTTP_TIMEOUT</td>
+            <td>600000</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>ShopOrderComplete post process request</td>
+            <td>productionOrderComplete_STD_POSTSERVICE</td>
+            <td>1.16.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>Material ZMNMAT03 process request</td>
+            <td>Z_ZMNMAT03_STD_SERVICE</td>
+            <td>1.16.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>Material ZMNMAT03 process request</td>
+            <td>Z_ZMNMAT03_STD_SERVICE</td>
+            <td>1.16.0</td>
+            <td>HTTP_TIMEOUT</td>
+            <td>600000</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>Parameter Splitter for oData API_DEFECTCODE_SRV</td>
+            <td>API_DEFECTCODE_SRV_Parameter_Splitter</td>
+            <td>1.16.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>API_BATCH_SRV</td>
+            <td>API_BATCH_SRV</td>
+            <td>1.20.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>API_BATCH_SRV</td>
+            <td>API_BATCH_SRV</td>
+            <td>1.20.0</td>
+            <td>USER_ROLE</td>
+            <td>ESBMessaging.send</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>Inventory INVCON03 process request</td>
+            <td>INVCON03_STD_SERVICE</td>
+            <td>1.16.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>Inventory INVCON03 process request</td>
+            <td>INVCON03_STD_SERVICE</td>
+            <td>1.16.0</td>
+            <td>HTTP_TIMEOUT</td>
+            <td>600000</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>EQUIPMENT_CREATE02 process request</td>
+            <td>EQUIPMENT_CREATE02_STD_SERVICE</td>
+            <td>1.17.6</td>
+            <td>DMC_CREDENTIAL</td>
+            <td>CF_AUTH</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>EQUIPMENT_CREATE02 process request</td>
+            <td>EQUIPMENT_CREATE02_STD_SERVICE</td>
+            <td>1.17.6</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>EQUIPMENT_CREATE02 process request</td>
+            <td>EQUIPMENT_CREATE02_STD_SERVICE</td>
+            <td>1.17.6</td>
+            <td>HTTP_TIMEOUT</td>
+            <td>600000</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>API_STANDARD_VALUE_KEY_SRV</td>
+            <td>API_STANDARD_VALUE_KEY_SRV</td>
+            <td>1.20.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>API_STANDARD_VALUE_KEY_SRV</td>
+            <td>API_STANDARD_VALUE_KEY_SRV</td>
+            <td>1.20.0</td>
+            <td>USER_ROLE</td>
+            <td>ESBMessaging.send</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>REO Release ShopOrder process request</td>
+            <td>releaseShopOrder_STD_SERVICE</td>
+            <td>1.16.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>REO Release ShopOrder process request</td>
+            <td>releaseShopOrder_STD_SERVICE</td>
+            <td>1.16.0</td>
+            <td>LOCATION_ID</td>
+            <td></td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>REO Release ShopOrder process request</td>
+            <td>releaseShopOrder_STD_SERVICE</td>
+            <td>1.16.0</td>
+            <td>HTTP_TIMEOUT</td>
+            <td>300000</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>MaintainInventory post process request</td>
+            <td>maintainInventory_STD_POSTSERVICE</td>
+            <td>1.16.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>REO Update ShopOrder Schedule process request</td>
+            <td>updateShopOrderSchedule_STD_SERVICE</td>
+            <td>1.16.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>REO Update ShopOrder Schedule process request</td>
+            <td>updateShopOrderSchedule_STD_SERVICE</td>
+            <td>1.16.0</td>
+            <td>LOCATION_ID</td>
+            <td></td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>REO Update ShopOrder Schedule process request</td>
+            <td>updateShopOrderSchedule_STD_SERVICE</td>
+            <td>1.16.0</td>
+            <td>HTTP_TIMEOUT</td>
+            <td>300000</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>Routing LOIROU04 process request</td>
+            <td>Z_LOIROU04_STD_SERVICE</td>
+            <td>1.16.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>Routing LOIROU04 process request</td>
+            <td>Z_LOIROU04_STD_SERVICE</td>
+            <td>1.16.0</td>
+            <td>HTTP_TIMEOUT</td>
+            <td>600000</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>Class CLSMAS04 process request</td>
+            <td>Class_CLSMAS04_process_request</td>
+            <td>1.19.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>Class CLSMAS04 process request</td>
+            <td>Class_CLSMAS04_process_request</td>
+            <td>1.19.0</td>
+            <td>HTTP_TIMEOUT</td>
+            <td>600000</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>API_INSPECTIONCATALOG_SRV</td>
+            <td>API_INSPECTIONCATALOG_SRV</td>
+            <td>1.20.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>API_INSPECTIONCATALOG_SRV</td>
+            <td>API_INSPECTIONCATALOG_SRV</td>
+            <td>1.20.0</td>
+            <td>USER_ROLE</td>
+            <td>ESBMessaging.send</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>StdEwmReqValueMappingProcessor</td>
+            <td>StdEwmReqValueMappingProcessor</td>
+            <td>1.16.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>EWM OrderStaging process request</td>
+            <td>ewmStagingRequest_STD_SERVICE</td>
+            <td>1.16.0</td>
+            <td>EWM_PORT</td>
+            <td></td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>EWM OrderStaging process request</td>
+            <td>ewmStagingRequest_STD_SERVICE</td>
+            <td>1.16.0</td>
+            <td>Location ID</td>
+            <td></td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>EWM OrderStaging process request</td>
+            <td>ewmStagingRequest_STD_SERVICE</td>
+            <td>1.16.0</td>
+            <td>EWM_URL</td>
+            <td></td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>EWM OrderStaging process request</td>
+            <td>ewmStagingRequest_STD_SERVICE</td>
+            <td>1.16.0</td>
+            <td>Credential Name</td>
+            <td></td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>API_PROC_ORDER_CONFIRMATION_2_SRV</td>
+            <td>API_PROC_ORDER_CONFIRMATION_2_SRV</td>
+            <td>1.20.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>API_PROC_ORDER_CONFIRMATION_2_SRV</td>
+            <td>API_PROC_ORDER_CONFIRMATION_2_SRV</td>
+            <td>1.20.0</td>
+            <td>USER_ROLE</td>
+            <td>ESBMessaging.send</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>YieldConfirmation process request</td>
+            <td>yieldConfirmation_STD_SERVICE</td>
+            <td>1.16.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>YieldConfirmation process request</td>
+            <td>yieldConfirmation_STD_SERVICE</td>
+            <td>1.16.0</td>
+            <td>HTTP_TIMEOUT</td>
+            <td>600000</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>ECC Read Stock Process Request</td>
+            <td>ECC_READ_STOCK_STD_SERVICE</td>
+            <td>1.17.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>ECC Read Stock Process Request</td>
+            <td>ECC_READ_STOCK_STD_SERVICE</td>
+            <td>1.17.0</td>
+            <td>HTTP_TIMEOUT</td>
+            <td>600000</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>MasterRecipe LOIROU04 process request</td>
+            <td>LOIROU04_MASTER_RECIPE_STD_SERVICE</td>
+            <td>1.17.0</td>
+            <td>DMC_CREDENTIAL</td>
+            <td>CF_AUTH</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>MasterRecipe LOIROU04 process request</td>
+            <td>LOIROU04_MASTER_RECIPE_STD_SERVICE</td>
+            <td>1.17.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>MasterRecipe LOIROU04 process request</td>
+            <td>LOIROU04_MASTER_RECIPE_STD_SERVICE</td>
+            <td>1.17.0</td>
+            <td>HTTP_TIMEOUT</td>
+            <td>600000</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>OData Pre and Post Processor</td>
+            <td>ODataPrePostProcessor</td>
+            <td>1.16.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>WorkCenter LOIWCS03 process request</td>
+            <td>LOIWCS03_STD_SERVICE</td>
+            <td>1.16.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>WorkCenter LOIWCS03 process request</td>
+            <td>LOIWCS03_STD_SERVICE</td>
+            <td>1.16.0</td>
+            <td>HTTP_TIMEOUT</td>
+            <td>600000</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>BOM BOMMAT04 process request</td>
+            <td>BOMMAT04_STD_SERVICE</td>
+            <td>1.16.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>BOM BOMMAT04 process request</td>
+            <td>BOMMAT04_STD_SERVICE</td>
+            <td>1.16.0</td>
+            <td>HTTP_TIMEOUT</td>
+            <td>600000</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>PP_SHIFT01_STD_SERVICE_V2</td>
+            <td>PP_SHIFT01_STD_SERVICE_V2</td>
+            <td>1.17.0</td>
+            <td>DMC_CREDENTIAL</td>
+            <td>CF_AUTH</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>PP_SHIFT01_STD_SERVICE_V2</td>
+            <td>PP_SHIFT01_STD_SERVICE_V2</td>
+            <td>1.17.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>PP_SHIFT01_STD_SERVICE_V2</td>
+            <td>PP_SHIFT01_STD_SERVICE_V2</td>
+            <td>1.17.0</td>
+            <td>HTTP_TIMEOUT</td>
+            <td>600000</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>Characteristic CHRMAS05 process request</td>
+            <td>Characteristic_CHRMAS05_process_request</td>
+            <td>1.19.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>Characteristic CHRMAS05 process request</td>
+            <td>Characteristic_CHRMAS05_process_request</td>
+            <td>1.19.0</td>
+            <td>HTTP_TIMEOUT</td>
+            <td>600000</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>StdEwmOutBoundValueMappingProcessor</td>
+            <td>StdEwmOutBoundValueMappingProcessor</td>
+            <td>1.16.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>Bapi Service Processor</td>
+            <td>BapiServiceProcessor</td>
+            <td>1.16.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>LOIPRO05 conditional routing</td>
+            <td>LOIPRO05_CONDITIONAL_ROUTING</td>
+            <td>1.18.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>LOIPRO05 conditional routing</td>
+            <td>LOIPRO05_CONDITIONAL_ROUTING</td>
+            <td>1.18.0</td>
+            <td>PROD_ORD_SOAP_V2_ENABLED</td>
+            <td>TRUE</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>Material MATMAS04 split batch materials</td>
+            <td>MATMAS04_Splitter</td>
+            <td>1.18.0</td>
+            <td>HTTP_TIMEOUT</td>
+            <td>600000</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>EWM SingleOrderStaging process request</td>
+            <td>ewmSingleOrderStaging_STD_SERVICE</td>
+            <td>1.16.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>EWM SingleOrderStaging process request</td>
+            <td>ewmSingleOrderStaging_STD_SERVICE</td>
+            <td>1.16.0</td>
+            <td>HTTP_TIMEOUT</td>
+            <td>600000</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>Material MATMAS05 split batch materials</td>
+            <td>MATMAS05_Splitter</td>
+            <td>1.18.0</td>
+            <td>HTTP_TIMEOUT</td>
+            <td>600000</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>API_INSPECTIONLOT_SRV</td>
+            <td>API_INSPECTIONLOT_SRV</td>
+            <td>1.20.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>API_INSPECTIONLOT_SRV</td>
+            <td>API_INSPECTIONLOT_SRV</td>
+            <td>1.20.0</td>
+            <td>USER_ROLE</td>
+            <td>ESBMessaging.send</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>INBOUND PROCESSOR</td>
+            <td>INBOUND_PROCESSOR</td>
+            <td>1.19.1</td>
+            <td>DMC_CREDENTIAL</td>
+            <td>CF_AUTH</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>INBOUND PROCESSOR</td>
+            <td>INBOUND_PROCESSOR</td>
+            <td>1.19.1</td>
+            <td>REQUEST_TIMEOUT_IN_MS</td>
+            <td>60000</td>
+            <td>xsd:integer</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>INBOUND PROCESSOR</td>
+            <td>INBOUND_PROCESSOR</td>
+            <td>1.19.1</td>
+            <td>DMC_PRIVATE_KEY_ALIAS</td>
+            <td></td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>INBOUND PROCESSOR</td>
+            <td>INBOUND_PROCESSOR</td>
+            <td>1.19.1</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>INBOUND PROCESSOR</td>
+            <td>INBOUND_PROCESSOR</td>
+            <td>1.19.1</td>
+            <td>DMC_TOKEN_URL</td>
+            <td></td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>INBOUND PROCESSOR</td>
+            <td>INBOUND_PROCESSOR</td>
+            <td>1.19.1</td>
+            <td>DMC_API_URL</td>
+            <td></td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>EWM GoodsReceipt Cancellation Process Request</td>
+            <td>ewmGoodsReceiptCancellation_STD_SERVICE</td>
+            <td>1.16.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>Bapi Return Processor</td>
+            <td>BapiReturnProcessor</td>
+            <td>1.16.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>API_EWM_SINGLE_ORDER_STAGING</td>
+            <td>API_EWM_SINGLE_ORDER_STAGING</td>
+            <td>1.20.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>API_EWM_SINGLE_ORDER_STAGING</td>
+            <td>API_EWM_SINGLE_ORDER_STAGING</td>
+            <td>1.20.0</td>
+            <td>USER_ROLE</td>
+            <td>ESBMessaging.send</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>ShopOrderComplete pre translate request</td>
+            <td>productionOrderComplete_STD_PREXSLT</td>
+            <td>1.16.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>General Message Processor</td>
+            <td>GenericMessageProcessor</td>
+            <td>1.20.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>General Message Processor</td>
+            <td>GenericMessageProcessor</td>
+            <td>1.20.0</td>
+            <td>LOG_FULL_ATTACHMENTS</td>
+            <td>FALSE</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>General Message Processor</td>
+            <td>GenericMessageProcessor</td>
+            <td>1.20.0</td>
+            <td>USER_ROLE</td>
+            <td>ESBMessaging.send</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>LOIROU04 conditional routing</td>
+            <td>LOIROU04_CONDITIONAL_ROUTING</td>
+            <td>1.16.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>ECC Read Stock Post Process Request</td>
+            <td>ECC_READ_STOCK_STD_POSTSERVICE</td>
+            <td>1.17.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>API_PRODUCTION_ORDER_OP2_SRV</td>
+            <td>API_PRODUCTION_ORDER_OP2_SRV</td>
+            <td>1.20.0</td>
+            <td>ENDPOINT_ID</td>
+            <td>00</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP S/4HANA Integration with SAP Digital Manufacturing</td>
+            <td>API_PRODUCTION_ORDER_OP2_SRV</td>
+            <td>API_PRODUCTION_ORDER_OP2_SRV</td>
+            <td>1.20.0</td>
+            <td>USER_ROLE</td>
+            <td>ESBMessaging.send</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP SuccessFactors Employee Central Integration with SAP ERP or SAP S/4HANA: Generic Data</td>
+            <td>Replicate Generic Data from SAP SuccessFactors Employee Central to SAP ERP or SAP S4HANA Using the OData API</td>
+            <td>Replicate_Generic_Data_from_SAP_SuccessFactors_Employee_Central_to_SAP_ERP_or_SAP_S4HANA</td>
+            <td>1.0.0</td>
+            <td>ALLOW_CHUNKING</td>
+            <td>1</td>
+            <td>xsd:boolean</td>
+          </tr>
+          <tr>
+            <td>SAP SuccessFactors Employee Central Integration with SAP ERP or SAP S/4HANA: Generic Data</td>
+            <td>Replicate Generic Data from SAP SuccessFactors Employee Central to SAP ERP or SAP S4HANA Using the OData API</td>
+            <td>Replicate_Generic_Data_from_SAP_SuccessFactors_Employee_Central_to_SAP_ERP_or_SAP_S4HANA</td>
+            <td>1.0.0</td>
+            <td>SUBJECT_DN</td>
+            <td></td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP SuccessFactors Employee Central Integration with SAP ERP or SAP S/4HANA: Generic Data</td>
+            <td>Replicate Generic Data from SAP SuccessFactors Employee Central to SAP ERP or SAP S4HANA Using the OData API</td>
+            <td>Replicate_Generic_Data_from_SAP_SuccessFactors_Employee_Central_to_SAP_ERP_or_SAP_S4HANA</td>
+            <td>1.0.0</td>
+            <td>PROXY_TYPE</td>
+            <td>default</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP SuccessFactors Employee Central Integration with SAP ERP or SAP S/4HANA: Generic Data</td>
+            <td>Replicate Generic Data from SAP SuccessFactors Employee Central to SAP ERP or SAP S4HANA Using the OData API</td>
+            <td>Replicate_Generic_Data_from_SAP_SuccessFactors_Employee_Central_to_SAP_ERP_or_SAP_S4HANA</td>
+            <td>1.0.0</td>
+            <td>EC_CREDENTIALS</td>
+            <td></td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP SuccessFactors Employee Central Integration with SAP ERP or SAP S/4HANA: Generic Data</td>
+            <td>Replicate Generic Data from SAP SuccessFactors Employee Central to SAP ERP or SAP S4HANA Using the OData API</td>
+            <td>Replicate_Generic_Data_from_SAP_SuccessFactors_Employee_Central_to_SAP_ERP_or_SAP_S4HANA</td>
+            <td>1.0.0</td>
+            <td>ERP_TIMEOUT</td>
+            <td>60000</td>
+            <td>xsd:integer</td>
+          </tr>
+          <tr>
+            <td>SAP SuccessFactors Employee Central Integration with SAP ERP or SAP S/4HANA: Generic Data</td>
+            <td>Replicate Generic Data from SAP SuccessFactors Employee Central to SAP ERP or SAP S4HANA Using the OData API</td>
+            <td>Replicate_Generic_Data_from_SAP_SuccessFactors_Employee_Central_to_SAP_ERP_or_SAP_S4HANA</td>
+            <td>1.0.0</td>
+            <td>EC_URL</td>
+            <td>https://example.com</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP SuccessFactors Employee Central Integration with SAP ERP or SAP S/4HANA: Generic Data</td>
+            <td>Replicate Generic Data from SAP SuccessFactors Employee Central to SAP ERP or SAP S4HANA Using the OData API</td>
+            <td>Replicate_Generic_Data_from_SAP_SuccessFactors_Employee_Central_to_SAP_ERP_or_SAP_S4HANA</td>
+            <td>1.0.0</td>
+            <td>EC_AUTHENTICATION</td>
+            <td>Basic</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP SuccessFactors Employee Central Integration with SAP ERP or SAP S/4HANA: Generic Data</td>
+            <td>Replicate Generic Data from SAP SuccessFactors Employee Central to SAP ERP or SAP S4HANA Using the OData API</td>
+            <td>Replicate_Generic_Data_from_SAP_SuccessFactors_Employee_Central_to_SAP_ERP_or_SAP_S4HANA</td>
+            <td>1.0.0</td>
+            <td>EC_PAGE_SIZE</td>
+            <td>400</td>
+            <td>xsd:integer</td>
+          </tr>
+          <tr>
+            <td>SAP SuccessFactors Employee Central Integration with SAP ERP or SAP S/4HANA: Generic Data</td>
+            <td>Replicate Generic Data from SAP SuccessFactors Employee Central to SAP ERP or SAP S4HANA Using the OData API</td>
+            <td>Replicate_Generic_Data_from_SAP_SuccessFactors_Employee_Central_to_SAP_ERP_or_SAP_S4HANA</td>
+            <td>1.0.0</td>
+            <td>SENDER_AUTHENTICATION</td>
+            <td>RoleBased</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP SuccessFactors Employee Central Integration with SAP ERP or SAP S/4HANA: Generic Data</td>
+            <td>Replicate Generic Data from SAP SuccessFactors Employee Central to SAP ERP or SAP S4HANA Using the OData API</td>
+            <td>Replicate_Generic_Data_from_SAP_SuccessFactors_Employee_Central_to_SAP_ERP_or_SAP_S4HANA</td>
+            <td>1.0.0</td>
+            <td>ISSUER_DN</td>
+            <td></td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP SuccessFactors Employee Central Integration with SAP ERP or SAP S/4HANA: Generic Data</td>
+            <td>Replicate Generic Data from SAP SuccessFactors Employee Central to SAP ERP or SAP S4HANA Using the OData API</td>
+            <td>Replicate_Generic_Data_from_SAP_SuccessFactors_Employee_Central_to_SAP_ERP_or_SAP_S4HANA</td>
+            <td>1.0.0</td>
+            <td>ERP_CREDENTIALS</td>
+            <td></td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP SuccessFactors Employee Central Integration with SAP ERP or SAP S/4HANA: Generic Data</td>
+            <td>Replicate Generic Data from SAP SuccessFactors Employee Central to SAP ERP or SAP S4HANA Using the OData API</td>
+            <td>Replicate_Generic_Data_from_SAP_SuccessFactors_Employee_Central_to_SAP_ERP_or_SAP_S4HANA</td>
+            <td>1.0.0</td>
+            <td>LOCATION_ID</td>
+            <td></td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP SuccessFactors Employee Central Integration with SAP ERP or SAP S/4HANA: Generic Data</td>
+            <td>Replicate Generic Data from SAP SuccessFactors Employee Central to SAP ERP or SAP S4HANA Using the OData API</td>
+            <td>Replicate_Generic_Data_from_SAP_SuccessFactors_Employee_Central_to_SAP_ERP_or_SAP_S4HANA</td>
+            <td>1.0.0</td>
+            <td>ERP_URL</td>
+            <td>https://example.com</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP SuccessFactors Employee Central Integration with SAP ERP or SAP S/4HANA: Generic Data</td>
+            <td>Replicate Generic Data from SAP SuccessFactors Employee Central to SAP ERP or SAP S4HANA Using the OData API</td>
+            <td>Replicate_Generic_Data_from_SAP_SuccessFactors_Employee_Central_to_SAP_ERP_or_SAP_S4HANA</td>
+            <td>1.0.0</td>
+            <td>SAP_QUERY_URL</td>
+            <td>/EC_to_ERP_Generic_Odata_Query</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP SuccessFactors Employee Central Integration with SAP ERP or SAP S/4HANA: Generic Data</td>
+            <td>Replicate Generic Data from SAP SuccessFactors Employee Central to SAP ERP or SAP S4HANA Using the OData API</td>
+            <td>Replicate_Generic_Data_from_SAP_SuccessFactors_Employee_Central_to_SAP_ERP_or_SAP_S4HANA</td>
+            <td>1.0.0</td>
+            <td>ERP_PRIVATE_KEY_ALIAS</td>
+            <td></td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP SuccessFactors Employee Central Integration with SAP ERP or SAP S/4HANA: Generic Data</td>
+            <td>Replicate Generic Data from SAP SuccessFactors Employee Central to SAP ERP or SAP S4HANA Using the OData API</td>
+            <td>Replicate_Generic_Data_from_SAP_SuccessFactors_Employee_Central_to_SAP_ERP_or_SAP_S4HANA</td>
+            <td>1.0.0</td>
+            <td>USER_ROLE</td>
+            <td>ESBMessaging.send</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP SuccessFactors Employee Central Integration with SAP ERP or SAP S/4HANA: Generic Data</td>
+            <td>Replicate Generic Data from SAP SuccessFactors Employee Central to SAP ERP or SAP S4HANA Using the OData API</td>
+            <td>Replicate_Generic_Data_from_SAP_SuccessFactors_Employee_Central_to_SAP_ERP_or_SAP_S4HANA</td>
+            <td>1.0.0</td>
+            <td>ERP_AUTHENTICATION</td>
+            <td>Basic</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>SAP SuccessFactors Employee Central Integration with SAP ERP or SAP S/4HANA: Generic Data</td>
+            <td>Replicate Generic Data from SAP SuccessFactors Employee Central to SAP ERP or SAP S4HANA Using the OData API</td>
+            <td>Replicate_Generic_Data_from_SAP_SuccessFactors_Employee_Central_to_SAP_ERP_or_SAP_S4HANA</td>
+            <td>1.0.0</td>
+            <td>EC_TIMEOUT</td>
+            <td>1</td>
+            <td>xsd:integer</td>
+          </tr>
+          <tr>
+            <td>Table-Based UI for SAP Cloud Integration</td>
+            <td>Integration Artifacts UI</td>
+            <td>Integration_Artifacts_UI</td>
+            <td>1.0.7</td>
+            <td>OAuthCredential</td>
+            <td>CI_ODATA_API</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Table-Based UI for SAP Cloud Integration</td>
+            <td>Integration Artifacts UI</td>
+            <td>Integration_Artifacts_UI</td>
+            <td>1.0.7</td>
+            <td>HostAddress</td>
+            <td>https://62ad4bb9trial.it-cpitrial06.cfapps.us10-001.hana.ondemand.com</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Table-Based UI for SAP Cloud Integration</td>
+            <td>Integration Artifacts UI</td>
+            <td>Integration_Artifacts_UI</td>
+            <td>1.0.7</td>
+            <td>LogHTML</td>
+            <td>no</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Table-Based UI for SAP Cloud Integration</td>
+            <td>Integration Assets UI</td>
+            <td>Integration_Assets_UI</td>
+            <td>1.0.7</td>
+            <td>OAuthCredential</td>
+            <td>CI_ODATA_API</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Table-Based UI for SAP Cloud Integration</td>
+            <td>Integration Assets UI</td>
+            <td>Integration_Assets_UI</td>
+            <td>1.0.7</td>
+            <td>HostAddress</td>
+            <td>https://62ad4bb9trial.it-cpitrial06.cfapps.us10-001.hana.ondemand.com</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Table-Based UI for SAP Cloud Integration</td>
+            <td>Integration Assets UI</td>
+            <td>Integration_Assets_UI</td>
+            <td>1.0.7</td>
+            <td>LogHTML</td>
+            <td>no</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Table-Based UI for SAP Cloud Integration</td>
+            <td>Message Monitoring UI</td>
+            <td>Message_Monitoring_UI</td>
+            <td>1.0.14</td>
+            <td>OAuthCredential</td>
+            <td>CI_ODATA_API</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Table-Based UI for SAP Cloud Integration</td>
+            <td>Message Monitoring UI</td>
+            <td>Message_Monitoring_UI</td>
+            <td>1.0.14</td>
+            <td>HostAddress</td>
+            <td>https://62ad4bb9trial.it-cpitrial06.cfapps.us10-001.hana.ondemand.com</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Table-Based UI for SAP Cloud Integration</td>
+            <td>Message Monitoring UI</td>
+            <td>Message_Monitoring_UI</td>
+            <td>1.0.14</td>
+            <td>LogHTML</td>
+            <td>no</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-01</td>
+            <td>SAP Success Factors Employee Central Job Information Delta Load</td>
+            <td>SF_EC_Job_Information_Delta_Load</td>
+            <td>1.0.1</td>
+            <td>LastExecutionDate</td>
+            <td></td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-01</td>
+            <td>SAP Success Factors Employee Central Job Information Delta Load</td>
+            <td>SF_EC_Job_Information_Delta_Load</td>
+            <td>1.0.1</td>
+            <td>HC HTTP Timeout</td>
+            <td>60000</td>
+            <td>xsd:integer</td>
+          </tr>
+          <tr>
+            <td>Test-Package-01</td>
+            <td>SAP Success Factors Employee Central Job Information Delta Load</td>
+            <td>SF_EC_Job_Information_Delta_Load</td>
+            <td>1.0.1</td>
+            <td>ApiKey</td>
+            <td></td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-01</td>
+            <td>SAP Success Factors Employee Central Job Information Delta Load</td>
+            <td>SF_EC_Job_Information_Delta_Load</td>
+            <td>1.0.1</td>
+            <td>GCP Timeout</td>
+            <td>60000</td>
+            <td>xsd:integer</td>
+          </tr>
+          <tr>
+            <td>Test-Package-01</td>
+            <td>SAP Success Factors Employee Central Job Information Delta Load</td>
+            <td>SF_EC_Job_Information_Delta_Load</td>
+            <td>1.0.1</td>
+            <td>SplitTimeout</td>
+            <td>300</td>
+            <td>xsd:integer</td>
+          </tr>
+          <tr>
+            <td>Test-Package-01</td>
+            <td>SAP Success Factors Employee Central Job Information Delta Load</td>
+            <td>SF_EC_Job_Information_Delta_Load</td>
+            <td>1.0.1</td>
+            <td>HC ODATA Address</td>
+            <td></td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-01</td>
+            <td>SAP Success Factors Employee Central Job Information Delta Load</td>
+            <td>SF_EC_Job_Information_Delta_Load</td>
+            <td>1.0.1</td>
+            <td>Scheduler</td>
+            <td>fireNow=true</td>
+            <td>custom:schedule</td>
+          </tr>
+          <tr>
+            <td>Test-Package-01</td>
+            <td>SAP Success Factors Employee Central Job Information Delta Load</td>
+            <td>SF_EC_Job_Information_Delta_Load</td>
+            <td>1.0.1</td>
+            <td>SF API Timeout</td>
+            <td>60</td>
+            <td>xsd:integer</td>
+          </tr>
+          <tr>
+            <td>Test-Package-01</td>
+            <td>SAP Success Factors Employee Central Job Information Delta Load</td>
+            <td>SF_EC_Job_Information_Delta_Load</td>
+            <td>1.0.1</td>
+            <td>Third Party Address</td>
+            <td></td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-01</td>
+            <td>SAP Success Factors Employee Central Job Information Delta Load</td>
+            <td>SF_EC_Job_Information_Delta_Load</td>
+            <td>1.0.1</td>
+            <td>EnablePayloadLogging</td>
+            <td>true</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-01</td>
+            <td>SAP Success Factors Employee Central Job Information Delta Load</td>
+            <td>SF_EC_Job_Information_Delta_Load</td>
+            <td>1.0.1</td>
+            <td>Third Party Timeout</td>
+            <td>60000</td>
+            <td>xsd:integer</td>
+          </tr>
+          <tr>
+            <td>Test-Package-01</td>
+            <td>SAP Success Factors Employee Central Job Information Delta Load</td>
+            <td>SF_EC_Job_Information_Delta_Load</td>
+            <td>1.0.1</td>
+            <td>GroupSize</td>
+            <td>50</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-01</td>
+            <td>SAP Success Factors Employee Central Job Information Delta Load</td>
+            <td>SF_EC_Job_Information_Delta_Load</td>
+            <td>1.0.1</td>
+            <td>Number of Concurrent Processes</td>
+            <td>3</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-01</td>
+            <td>SAP Success Factors Employee Central Job Information Delta Load</td>
+            <td>SF_EC_Job_Information_Delta_Load</td>
+            <td>1.0.1</td>
+            <td>HC Authentication</td>
+            <td>None</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-01</td>
+            <td>SAP Success Factors Employee Central Job Information Delta Load</td>
+            <td>SF_EC_Job_Information_Delta_Load</td>
+            <td>1.0.1</td>
+            <td>SF Authentication</td>
+            <td>Basic</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-01</td>
+            <td>SAP Success Factors Employee Central Job Information Delta Load</td>
+            <td>SF_EC_Job_Information_Delta_Load</td>
+            <td>1.0.1</td>
+            <td>Logging Level(INFO)</td>
+            <td>INFO</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-01</td>
+            <td>SAP Success Factors Employee Central Job Information Delta Load</td>
+            <td>SF_EC_Job_Information_Delta_Load</td>
+            <td>1.0.1</td>
+            <td>HC HTTP Address</td>
+            <td></td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-01</td>
+            <td>SAP Success Factors Employee Central Job Information Delta Load</td>
+            <td>SF_EC_Job_Information_Delta_Load</td>
+            <td>1.0.1</td>
+            <td>HC ODATA TimeOut</td>
+            <td>10</td>
+            <td>xsd:integer</td>
+          </tr>
+          <tr>
+            <td>Test-Package-01</td>
+            <td>SAP Success Factors Employee Central Job Information Delta Load</td>
+            <td>SF_EC_Job_Information_Delta_Load</td>
+            <td>1.0.1</td>
+            <td>GCP Address</td>
+            <td></td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-01</td>
+            <td>SAP Success Factors Employee Central Job Information Delta Load</td>
+            <td>SF_EC_Job_Information_Delta_Load</td>
+            <td>1.0.1</td>
+            <td>Authentication</td>
+            <td>None</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-01</td>
+            <td>SAP Success Factors Employee Central Job Information Delta Load</td>
+            <td>SF_EC_Job_Information_Delta_Load</td>
+            <td>1.0.1</td>
+            <td>HC Credential</td>
+            <td></td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-01</td>
+            <td>SAP Success Factors Employee Central Job Information Delta Load</td>
+            <td>SF_EC_Job_Information_Delta_Load</td>
+            <td>1.0.1</td>
+            <td>GCPApiKey</td>
+            <td></td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-01</td>
+            <td>SAP Success Factors Employee Central Job Information Delta Load</td>
+            <td>SF_EC_Job_Information_Delta_Load</td>
+            <td>1.0.1</td>
+            <td>SF Address</td>
+            <td></td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-01</td>
+            <td>SAP Success Factors Employee Central Job Information Delta Load</td>
+            <td>SF_EC_Job_Information_Delta_Load</td>
+            <td>1.0.1</td>
+            <td>SF Credential Name</td>
+            <td></td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>SFAPI_Credentials</td>
+            <td>&lt;SFAPI_Credential&gt;</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>is_fulltime_employee_ext</td>
+            <td>&lt;Determines how long terminated employees should be included in the payMax file&gt;</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>SFTP_Authentication</td>
+            <td>user_password</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>BenefitFocus_SFTP_PrivateKey</td>
+            <td></td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>BenefitFocus_Authentication</td>
+            <td>user_password</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>Custom_Mapping_Authentication</td>
+            <td>Basic</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>company_territory_code_ext</td>
+            <td>&lt;Comma-delimited list for specifying the single company_territory_codes to include in the extract. This value must be enclosed in single quotes.&gt;</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>PGP_Encryptor_Test_Compression_Algo</td>
+            <td>ZLIB</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>PGP_Encryptor_Test_Secret_Key_Ln</td>
+            <td>168</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>BenefitFocus_SFTP_Credential</td>
+            <td></td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>PGP_Encryptor_Test_Encyption_Algo</td>
+            <td>DESede</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>pay_group_ext</td>
+            <td>&lt;Include the foundation object externalCode if you want to include only employees associated with that foundation object. This value must be enclosed in single quotes&gt;</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>person_id_external_ext</td>
+            <td>&lt;Comma-delimited list of person id external without space. This value must be enclosed in single quotes&gt;</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>includedPayComponents_ext</td>
+            <td>&lt;Comma-delimited list of pay component IDs to include in calculating annual salary&gt;</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>SFTP_Credential</td>
+            <td></td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>ID</td>
+            <td>&lt;I_or_C_or_P_or_S_Number&gt;</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>location_ext</td>
+            <td>&lt;Include the foundation object externalCode if you want to include only employees associated with that foundation object. This value must be enclosed in single quotes.&gt;</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>employment_type_ext</td>
+            <td>&lt;Include employees with a particular employment type. This value must be enclosed in single quotes.&gt;</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>BenefitFocus_SFTP_Log_Directory_Prod</td>
+            <td>&lt;SFTP_File_Directory&gt;</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>Timeout</td>
+            <td>5</td>
+            <td>xsd:integer</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>BenefitFocus_SFTP_File_Name</td>
+            <td>&lt;SFTP_File_Name.Extension&gt;</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>PGP_Encryptor_Prod_Secret_Key_Ln</td>
+            <td>128</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>SFTP</td>
+            <td>&lt;SFTP_Log_Directory&gt;</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>BenefitFocus_SFTP_File_Name_Prod</td>
+            <td>&lt;SFTP_File_Name.Extension&gt;</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>SOAP_CUSTOM_MAPPING_FLOW</td>
+            <td></td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>BenefitFocus_SFTP_Log_Directory_Plain</td>
+            <td>&lt;SFTP_File_Directory&gt;</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>PGP_Encryptor_Test_Integrity_Protected_Packet</td>
+            <td>true</td>
+            <td>xsd:boolean</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>CustomFieldMapping</td>
+            <td>&lt;Specifies true if you need to invoke the custom Iflow&gt;</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>PGP_Encryptor_Prod_Integrity_Protected_Packet</td>
+            <td>true</td>
+            <td>xsd:boolean</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>PGP_Encryptor_Test_UserId</td>
+            <td>eLink</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>TimerEventDefinition_1_scheduleKey_2</td>
+            <td>fireNow=true</td>
+            <td>custom:schedule</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>PGP_Encryptor_Test_Armored</td>
+            <td>true</td>
+            <td>xsd:boolean</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>SFTP_TIMEOUT</td>
+            <td>10000</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>FileEncryptionMode_ext</td>
+            <td>&lt;Specifies the type of deployment&gt;</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>PGP_Encryptor_Prod_Encyption_Algo</td>
+            <td>AES</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>BenefitFocus_SFTP_Username</td>
+            <td></td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>PGP_Encryptor_Test_Signature</td>
+            <td>NoSignature</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>BenefitFocusLoginIDMethod_ext</td>
+            <td>&amp;lt;Enter 1 for SSO and 2 for Manual Login. By default the value will be set to &amp;apos;Y&amp;apos;&amp;gt;</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>BF_SFTP_Timeout</td>
+            <td>10000</td>
+            <td>xsd:integer</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>SFAPI_Timeout</td>
+            <td>5</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>custom_filter_ext</td>
+            <td>&lt;Comma-delimited custom filters&gt;</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>business_unit_ext</td>
+            <td>&lt;Include the foundation object externalCode if you want to include only employees associated with that foundation object. This value must be enclosed in single quotes&gt;</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>SFTP_Directory</td>
+            <td>&lt;SFTP_Log_Directory&gt;</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>BenefitFocus_SFTP_Log_Directory_Success</td>
+            <td>&lt;SFTP_File_Directory&gt;</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>Proxy</td>
+            <td>none</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>employee_class_ext</td>
+            <td>&lt;Comma-delimited list for specifying the employee classes to include in the extract.&gt;</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>SF_AuthType</td>
+            <td>Basic</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>PGP_Encryptor_Prod_Signature</td>
+            <td>NoSignature</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>SFTP_Proxy_Type</td>
+            <td>none</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>PGP_Encryptor_Prod_UserId</td>
+            <td>payroll</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>BenefitFocus_SFTP_Log_Directory</td>
+            <td>&lt;SFTP_Log_Directory&gt;</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>SOAP_CUSTOM_MAPPING_TIMEOUT</td>
+            <td>60000</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>BenefitFocus_SFTP_Main_Directory</td>
+            <td>&lt;SFTP_File_Directory&gt;</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>Directory</td>
+            <td>&lt;SFTP_Log_Directory&gt;</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>SF_Endpoint</td>
+            <td></td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>BenefitFocus_SFTP_Append_Timestamp</td>
+            <td>1</td>
+            <td>xsd:boolean</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>SF_Credential</td>
+            <td></td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>BenefitFocus_SFTP_Log_Directory_Test</td>
+            <td>&lt;SFTP_File_Directory&gt;</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>BenefitFocus_SFTP_File_Name_Plain</td>
+            <td>&lt;SFTP_File_Name.Extension&gt;</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>PayFrequency_ext</td>
+            <td>&lt;Pay Frequency field of Benefitfocus file.&gt;</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>BenefitFocus_SFTP_File_Name_Test</td>
+            <td>&lt;SFTP_File_Name.Extension&gt;</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>BenefitFocusClientID_ext</td>
+            <td>&lt;Client ID for the Benefitfocus account/tenant. This is a mandatory field and if no value is maintained then the message "Set BenefitFocusClientID" is sent to the output file.&gt;</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>company_ext</td>
+            <td>&lt;Comma-delimited list. This value must be enclosed in single quotes, for example, 'ACE_USA', 'ACE_DE'&gt;</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>Page Size</td>
+            <td>200</td>
+            <td>xsd:integer</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>BenefitFocus_SFTP_Authentication</td>
+            <td>user_password</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>includeTerminations_ext</td>
+            <td>&lt;Determines how long terminated employees should be included in the payMax file before they are excluded, Possible values : 14,30,45,60 and leave empty&gt;</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>SFAPI_Endpoint</td>
+            <td>https://&lt;yourAPIserver.successfactors&gt;.com</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>PGP_Encryptor_Prod_Compression_Algo</td>
+            <td>ZLIB</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>SFAPI_PageSize</td>
+            <td>200</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>BenefitFocus_SFTP_Host</td>
+            <td>&lt;SFTP_Hostname&gt;</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>Custom_Mapping_Private_Key</td>
+            <td></td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>regular_temp_ext</td>
+            <td>&lt;Include regular or temporary employees.&gt;</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>PGP_Encryptor_Prod_Armored</td>
+            <td>true</td>
+            <td>xsd:boolean</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>Custom_Mapping_Timeout</td>
+            <td>60000</td>
+            <td>xsd:integer</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>Custom_Mapping_Proxy_Type</td>
+            <td>default</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>Custom_Mapping_Credential</td>
+            <td></td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-02</td>
+            <td>SF EC to Benefitfocus</td>
+            <td>SF_EC_to_Benefitfocus</td>
+            <td>1.3.4</td>
+            <td>PasswordMethod_ext</td>
+            <td>&lt;It is a part of the header record&gt;</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-03</td>
+            <td>Employee Integration from SAP SuccessFactors to SAP Concur</td>
+            <td>Employee_Integration_from_SAP_SuccessFactors_to_SAP_Concur</td>
+            <td>1.0.0</td>
+            <td>Sender_CredentialName</td>
+            <td></td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-03</td>
+            <td>Employee Integration from SAP SuccessFactors to SAP Concur</td>
+            <td>Employee_Integration_from_SAP_SuccessFactors_to_SAP_Concur</td>
+            <td>1.0.0</td>
+            <td>Sender_UseName</td>
+            <td></td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-03</td>
+            <td>Employee Integration from SAP SuccessFactors to SAP Concur</td>
+            <td>Employee_Integration_from_SAP_SuccessFactors_to_SAP_Concur</td>
+            <td>1.0.0</td>
+            <td>EnableLogging</td>
+            <td>true</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-03</td>
+            <td>Employee Integration from SAP SuccessFactors to SAP Concur</td>
+            <td>Employee_Integration_from_SAP_SuccessFactors_to_SAP_Concur</td>
+            <td>1.0.0</td>
+            <td>PGP_EncryptionUserID</td>
+            <td></td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-03</td>
+            <td>Employee Integration from SAP SuccessFactors to SAP Concur</td>
+            <td>Employee_Integration_from_SAP_SuccessFactors_to_SAP_Concur</td>
+            <td>1.0.0</td>
+            <td>Sender_ArchiveDirectory</td>
+            <td>Verarbeitet</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-03</td>
+            <td>Employee Integration from SAP SuccessFactors to SAP Concur</td>
+            <td>Employee_Integration_from_SAP_SuccessFactors_to_SAP_Concur</td>
+            <td>1.0.0</td>
+            <td>Receiver_Directory</td>
+            <td>&lt;Receiver Directory /in&gt;</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-03</td>
+            <td>Employee Integration from SAP SuccessFactors to SAP Concur</td>
+            <td>Employee_Integration_from_SAP_SuccessFactors_to_SAP_Concur</td>
+            <td>1.0.0</td>
+            <td>PGP_Signature</td>
+            <td>NoSignature</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-03</td>
+            <td>Employee Integration from SAP SuccessFactors to SAP Concur</td>
+            <td>Employee_Integration_from_SAP_SuccessFactors_to_SAP_Concur</td>
+            <td>1.0.0</td>
+            <td>Sender_PostProcessing</td>
+            <td>move</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-03</td>
+            <td>Employee Integration from SAP SuccessFactors to SAP Concur</td>
+            <td>Employee_Integration_from_SAP_SuccessFactors_to_SAP_Concur</td>
+            <td>1.0.0</td>
+            <td>Receiver_HandlingExistingFiles</td>
+            <td>Override</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-03</td>
+            <td>Employee Integration from SAP SuccessFactors to SAP Concur</td>
+            <td>Employee_Integration_from_SAP_SuccessFactors_to_SAP_Concur</td>
+            <td>1.0.0</td>
+            <td>Sender_Scheduler</td>
+            <td>0 0/1 0-23 ? * * * --tz=Europe/Berlin</td>
+            <td>custom:schedule</td>
+          </tr>
+          <tr>
+            <td>Test-Package-03</td>
+            <td>Employee Integration from SAP SuccessFactors to SAP Concur</td>
+            <td>Employee_Integration_from_SAP_SuccessFactors_to_SAP_Concur</td>
+            <td>1.0.0</td>
+            <td>Receiver_Authentication</td>
+            <td>public_key</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-03</td>
+            <td>Employee Integration from SAP SuccessFactors to SAP Concur</td>
+            <td>Employee_Integration_from_SAP_SuccessFactors_to_SAP_Concur</td>
+            <td>1.0.0</td>
+            <td>Receiver_PrivateKeyAlias</td>
+            <td>&lt;Receiver PrivateKeyAlias&gt;</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-03</td>
+            <td>Employee Integration from SAP SuccessFactors to SAP Concur</td>
+            <td>Employee_Integration_from_SAP_SuccessFactors_to_SAP_Concur</td>
+            <td>1.0.0</td>
+            <td>PGP_Compression Algorithm</td>
+            <td>ZLIB</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-03</td>
+            <td>Employee Integration from SAP SuccessFactors to SAP Concur</td>
+            <td>Employee_Integration_from_SAP_SuccessFactors_to_SAP_Concur</td>
+            <td>1.0.0</td>
+            <td>Sender_FileName</td>
+            <td></td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-03</td>
+            <td>Employee Integration from SAP SuccessFactors to SAP Concur</td>
+            <td>Employee_Integration_from_SAP_SuccessFactors_to_SAP_Concur</td>
+            <td>1.0.0</td>
+            <td>Sender_PrivateKeyAlias</td>
+            <td></td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-03</td>
+            <td>Employee Integration from SAP SuccessFactors to SAP Concur</td>
+            <td>Employee_Integration_from_SAP_SuccessFactors_to_SAP_Concur</td>
+            <td>1.0.0</td>
+            <td>PGP_Algorithm</td>
+            <td>AES</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-03</td>
+            <td>Employee Integration from SAP SuccessFactors to SAP Concur</td>
+            <td>Employee_Integration_from_SAP_SuccessFactors_to_SAP_Concur</td>
+            <td>1.0.0</td>
+            <td>Sender_LockTimeout</td>
+            <td>15</td>
+            <td>xsd:integer</td>
+          </tr>
+          <tr>
+            <td>Test-Package-03</td>
+            <td>Employee Integration from SAP SuccessFactors to SAP Concur</td>
+            <td>Employee_Integration_from_SAP_SuccessFactors_to_SAP_Concur</td>
+            <td>1.0.0</td>
+            <td>Receiver_ProxyType</td>
+            <td>none</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-03</td>
+            <td>Employee Integration from SAP SuccessFactors to SAP Concur</td>
+            <td>Employee_Integration_from_SAP_SuccessFactors_to_SAP_Concur</td>
+            <td>1.0.0</td>
+            <td>PGP_SecretKeyLength</td>
+            <td>128</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-03</td>
+            <td>Employee Integration from SAP SuccessFactors to SAP Concur</td>
+            <td>Employee_Integration_from_SAP_SuccessFactors_to_SAP_Concur</td>
+            <td>1.0.0</td>
+            <td>Sender_Directoy</td>
+            <td>&lt;Sender Directory /Concur&gt;</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-03</td>
+            <td>Employee Integration from SAP SuccessFactors to SAP Concur</td>
+            <td>Employee_Integration_from_SAP_SuccessFactors_to_SAP_Concur</td>
+            <td>1.0.0</td>
+            <td>Receiver_FileName</td>
+            <td></td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-03</td>
+            <td>Employee Integration from SAP SuccessFactors to SAP Concur</td>
+            <td>Employee_Integration_from_SAP_SuccessFactors_to_SAP_Concur</td>
+            <td>1.0.0</td>
+            <td>Sender_Authentication</td>
+            <td>public_key</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-03</td>
+            <td>Employee Integration from SAP SuccessFactors to SAP Concur</td>
+            <td>Employee_Integration_from_SAP_SuccessFactors_to_SAP_Concur</td>
+            <td>1.0.0</td>
+            <td>Sender_MaxMessages</td>
+            <td>20</td>
+            <td>xsd:integer</td>
+          </tr>
+          <tr>
+            <td>Test-Package-03</td>
+            <td>Employee Integration from SAP SuccessFactors to SAP Concur</td>
+            <td>Employee_Integration_from_SAP_SuccessFactors_to_SAP_Concur</td>
+            <td>1.0.0</td>
+            <td>Sender_Address</td>
+            <td>&lt;Sender Address&gt;</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-03</td>
+            <td>Employee Integration from SAP SuccessFactors to SAP Concur</td>
+            <td>Employee_Integration_from_SAP_SuccessFactors_to_SAP_Concur</td>
+            <td>1.0.0</td>
+            <td>Receiver_Address</td>
+            <td>&lt;Receiver SFTP Address&gt;</td>
+            <td>xsd:string</td>
+          </tr>
+          <tr>
+            <td>Test-Package-03</td>
+            <td>Employee Integration from SAP SuccessFactors to SAP Concur</td>
+            <td>Employee_Integration_from_SAP_SuccessFactors_to_SAP_Concur</td>
+            <td>1.0.0</td>
+            <td>Receiver_UserName</td>
+            <td>&lt;Receiver UserName&gt;</td>
+            <td>xsd:string</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th>PackageName</th>
+            <th>Name</th>
+            <th>Id</th>
+            <th>Version</th>
+            <th>ParameterKey</th>
+            <th>ParameterValue</th>
+            <th>DataType</th>
+          </tr>
+        </tfoot>
+      </table>
+    </div><hr>
+    <div class='separate' />
+    <div class='footer'>
+      <p>
+        <span>Coded with</span>
+        <span>
+          <i class='fa-solid fa-heart fa-flip' style='color: #e91e63'></i>
+        </span>
+        <span>by Surajit Neogi. Follow me on</span>
+        <span>
+          <a target='_blank' href='https://github.com/nesun3?tab=repositories'>
+            <i class='fa-brands fa-github fa-bounce fa-lg'></i>
+          </a>
+        </span>
+      </p>
+    </div>
+    <script>
+                $(document).ready(function() {
+                     document.title = "Integration Configurations " + new Date().toISOString().slice(0, 19).replaceAll(':','');
+                    $('#example').DataTable( { 
+                        dom: 'Bifrtlp',
+                        fixedHeader: true,
+                        fixedColumns:{
+                            left: 2
+                        },
+                        buttons: [  
+                            { extend: 'copy', title: '', exportOptions: { columns: ':visible', modifier: {selected: null}} },
+                            { extend: 'csv', title: '', exportOptions: { columns: ':visible', modifier: {selected: null}} },
+                            { extend: 'excel', title: '', exportOptions: { columns: ':visible', modifier: {selected: null}} },
+                            { extend: 'pdf', title: '', exportOptions: { columns: ':visible', modifier: {selected: null}}, orientation: 'landscape', pageSize: 'LEGAL' },
+                            'colvis'
+                        ],
+                         columnDefs: [ 
+                             { visible: false, targets: [2] }
+                        ],
+                        select: true,
+                        initComplete: function () {
+                          this.api()
+                            .columns()
+                            .every(function () {
+                               let column = this;
+                               let title = column.footer().textContent;
+
+                               // Create input element
+                               let input = document.createElement("input");
+                               input.placeholder = title;
+                               column.footer().replaceChildren(input);
+
+                               // Event listener for user input
+                               input.addEventListener("keyup", () => {
+                                 if (column.search() !== this.value) {
+                                   column.search(input.value).draw();
+                                 }
+                               });
+                            });
+                        }
+                    });
+                });
+                </script>
+  </body>
+</html>
